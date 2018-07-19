@@ -8,11 +8,6 @@ task :hi do
   puts "hello from the Other Rake!"
 end
 
-desc 'requires environment'
-task :environment do
-  require_relative './config/environment'
-end
-
 namespace :db do
 
   desc 'requires environment'
@@ -30,6 +25,11 @@ namespace :db do
     require_relative './db/seeds.rb'
   end
 
+end
+
+desc 'requires environment'
+task :environment do
+  require_relative './config/environment'
 end
 
 desc 'drop into the Pry console'
